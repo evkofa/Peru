@@ -194,6 +194,396 @@
         color: var(--blue-dark);
       }
 
+      /* --- РАЗДЕЛ С КАРТОЧКАМИ НАПРАВЛЕНИЙ --- */
+      .programs-section {
+        padding: 50px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .section-title h2 {
+        color: var(--blue-dark);
+        font-size: 28px;
+        font-weight: 800;
+      }
+
+      .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .prog-card {
+        background: var(--white);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .prog-body {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .prog-body h3 {
+        font-size: 14px;
+        color: var(--blue-dark);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .prog-list {
+        font-size: 12px;
+        color: #666;
+        list-style: none;
+        margin-bottom: 15px;
+      }
+
+      .prog-list li {
+        margin-bottom: 4px;
+      }
+
+      .prog-arrow {
+        align-self: flex-end;
+        width: 30px;
+        height: 30px;
+        background: var(--blue-sky);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--blue-dark);
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      /* --- БЛОК: ПОМОЩЬ И ШАГИ К ПОСТУПЛЕНИЮ --- */
+      .help-section {
+        background-color: var(--blue-sky);
+        padding: 40px 0;
+      }
+
+      .help-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .help-box {
+        background: var(--white);
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      }
+
+      .help-box h3 { color: var(--blue-dark); margin-bottom: 10px; }
+
+      .btn-whatsapp {
+        display: inline-block;
+        background: #25d366;
+        color: var(--white);
+        padding: 10px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 700;
+        margin-top: 15px;
+        font-size: 13px;
+      }
+
+      .steps-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 13px;
+      }
+
+      /* --- БЛОК: ПОДГОТОВИТЕЛЬНЫЙ КУРС --- */
+      .prep-course {
+        padding: 50px 0;
+        background: var(--white);
+      }
+
+      .prep-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .prep-content h2 { color: var(--blue-dark); font-size: 28px; margin-bottom: 15px; }
+
+      .prep-bullets { list-style: none; margin: 15px 0; }
+
+      .prep-bullets li { margin-bottom: 8px; font-weight: 600; color: var(--blue-dark); }
+
+      .prep-bullets li::before { content: '✓ '; color: var(--gold-dark); }
+
+      .btn-more {
+        display: inline-block;
+        background: var(--gold);
+        color: var(--blue-dark);
+        padding: 10px 25px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .side-box {
+        background: var(--blue-dark);
+        color: var(--white);
+        padding: 30px;
+        border-radius: 16px;
+        text-align: center;
+      }
+
+      /* --- БЛОК: СТУДЕНЧЕСКАЯ ЖИЗНЬ --- */
+      .life-experience { padding: 50px 0; }
+
+      .life-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .life-icons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+
+      .icon-item {
+        background: var(--white);
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 600;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      }
+
+      /* --- БЛОК: ЕСТЬ ВОПРОСЫ? --- */
+      .cta-contacts {
+        background: var(--blue-dark);
+        color: var(--white);
+        padding: 40px 0;
+      }
+
+      .cta-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .qr-placeholder {
+        width: 80px;
+        height: 80px;
+        background: var(--white);
+        margin-right: 15px;
+        display: inline-block;
+      }
+
+      /* --- ПОДВАЛ САЙТА --- */
+      .footer-bottom {
+        background: #002244;
+        color: rgba(255,255,255,0.7);
+        padding: 20px 0;
+        font-size: 12px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      @media (max-width: 992px) {
+        .programs-grid { grid-template-columns: repeat(2, 1fr); }
+        .hero__grid, .exp-grid, .help-grid, .prep-grid, .life-grid, .cta-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 576px) {
+        .programs-grid { grid-template-columns: 1fr; }
+        .navigation { display: none; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ШАПКА -->
+    <header class="header">
+      <div class="container header__inner">
+
+        padding: 0 20px;
+      }
+
+      /* --- ШАПКА САЙТА --- */
+      .header {
+        background-color: var(--blue-dark);
+        color: var(--white);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 2px solid var(--gold);
+      }
+
+      .header__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-text {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .navigation {
+        display: flex;
+        gap: 15px;
+      }
+
+      .navigation a {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 11px;
+        font-weight: 500;
+      }
+
+      .lang-switch {
+        background-color: #d9381e;
+        color: var(--white);
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      /* --- ГЛАВНЫЙ ЭКРАН --- */
+      .hero {
+        background: linear-gradient(135deg, rgba(0,51,102,0.95) 0%, rgba(0,86,179,0.9) 100%);
+        color: var(--white);
+        padding: 60px 0;
+      }
+
+      .hero__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .handwritten {
+        font-family: 'Caveat', cursive;
+        color: var(--gold);
+        font-size: 32px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      .hero__text {
+        font-size: 14px;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .btn-video {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background-color: var(--gold);
+        color: var(--blue-dark);
+        padding: 12px 28px;
+        border-radius: 30px;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 12px;
+        box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+      }
+
+      .hero__img-placeholder {
+        width: 100%;
+        height: 300px;
+        background: rgba(255,255,255,0.1);
+        border: 2px dashed rgba(255,255,255,0.3);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: var(--gold);
+      }
+
+      /* --- БЛОК ОПЫТА --- */
+      .experience {
+        padding: 40px 0;
+        background-color: var(--white);
+      }
+
+      .exp-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .exp-placeholder {
+        width: 100%;
+        height: 220px;
+        background: var(--blue-sky);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: var(--blue-dark);
+      }
+
+      .exp-content h2 {
+        color: var(--blue-dark);
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .exp-features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .exp-card {
+        background: var(--blue-sky);
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--blue-dark);
+      }
+
       /* --- РАЗДЕЛ С КАРТОЧКАМИ --- */
       .programs-section {
         padding: 50px 0;
