@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kursk State University - Estudiar en Rusia</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://googleapis.com" rel="stylesheet" />
+    <link rel="preconnect" href="https://googleapis.com" />
+    <link rel="preconnect" href="https://gstatic.com" crossorigin />
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet" />
     <style>
-      /* --- ПЕРЕМЕННЫЕ И СТИЛИ ДЛЯ СХОДСТВА С МАКЕТОМ --- */
       :root {
         --blue-dark: #003366;
         --blue-light: #0056b3;
@@ -38,7 +37,7 @@
         padding: 0 20px;
       }
 
-      /* --- ШАПКА САЙТА (HEADER) --- */
+      /* --- ШАПКА САЙТА --- */
       .header {
         background-color: var(--blue-dark);
         color: var(--white);
@@ -61,12 +60,6 @@
         gap: 10px;
       }
 
-      .logo-img {
-        width: 50px;
-        height: auto;
-        filter: brightness(0) invert(1); /* Делаем иконку белой */
-      }
-
       .logo-text {
         font-size: 11px;
         font-weight: 700;
@@ -76,19 +69,15 @@
 
       .navigation {
         display: flex;
-        gap: 20px;
+        gap: 15px;
       }
 
       .navigation a {
         color: var(--white);
         text-decoration: none;
-        font-size: 13px;
+        font-size: 11px;
         font-weight: 500;
         transition: color 0.3s;
-      }
-
-      .navigation a:hover {
-        color: var(--gold);
       }
 
       .lang-switch {
@@ -96,27 +85,21 @@
         color: var(--white);
         padding: 6px 12px;
         border-radius: 4px;
-        font-size: 13px;
+        font-size: 11px;
         font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 5px;
       }
 
-      /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
+      /* --- ГЛАВНЫЙ ЭКРАН --- */
       .hero {
-        background: linear-gradient(135deg, rgba(0,51,102,0.9) 0%, rgba(0,86,179,0.85) 100%), 
-                    url('https://unsplash.com') no-repeat center center/cover;
+        background: linear-gradient(135deg, rgba(0,51,102,0.95) 0%, rgba(0,86,179,0.9) 100%);
         color: var(--white);
-        padding: 80px 0;
-        position: relative;
-        overflow: hidden;
+        padding: 60px 0;
       }
 
       .hero__grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 40px;
+        gap: 30px;
         align-items: center;
       }
 
@@ -124,20 +107,19 @@
         font-family: 'Caveat', cursive;
         color: var(--gold);
         font-size: 32px;
-        transform: rotate(-3deg);
         display: inline-block;
         margin-bottom: 10px;
       }
 
       .hero h1 {
-        font-size: 46px;
+        font-size: 36px;
         font-weight: 800;
         line-height: 1.2;
         margin-bottom: 20px;
       }
 
       .hero__text {
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 30px;
         opacity: 0.9;
       }
@@ -153,80 +135,51 @@
         font-weight: 700;
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 14px;
-        transition: transform 0.3s, background-color 0.3s;
+        font-size: 12px;
         box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
       }
 
-      .btn-video:hover {
-        background-color: var(--white);
-        transform: translateY(-2px);
-      }
-
-      .btn-video::before {
-        content: '▶';
-        font-size: 12px;
-      }
-
-      .hero__img-wrapper {
-        position: relative;
-      }
-
-      .hero__img {
+      .hero__img-placeholder {
         width: 100%;
+        height: 300px;
+        background: rgba(255,255,255,0.1);
+        border: 2px dashed rgba(255,255,255,0.3);
         border-radius: 20px;
-        border: 4px solid var(--white);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: var(--gold);
       }
 
-      /* --- БЛОК ОПЫТА (EXPERIENCE) --- */
+      /* --- БЛОК ОПЫТА --- */
       .experience {
-        padding: 6px 0;
+        padding: 40px 0;
         background-color: var(--white);
       }
 
       .exp-grid {
         display: grid;
         grid-template-columns: 1fr 1.2fr;
-        gap: 40px;
+        gap: 30px;
         align-items: center;
-        background: var(--white);
-        border-radius: 16px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        padding: 30px;
       }
 
-      .exp-video-box {
-        position: relative;
-        border-radius: 12px;
-        overflow: hidden;
-      }
-
-      .exp-video-box img {
+      .exp-placeholder {
         width: 100%;
-        display: block;
-      }
-
-      .play-overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
-        background: rgba(255,255,255,0.9);
-        border-radius: 50%;
+        height: 220px;
+        background: var(--blue-sky);
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 20px;
+        font-size: 24px;
         color: var(--blue-dark);
-        cursor: pointer;
       }
 
       .exp-content h2 {
         color: var(--blue-dark);
-        font-size: 28px;
+        font-size: 24px;
         font-weight: 700;
         margin-bottom: 15px;
       }
@@ -234,40 +187,34 @@
       .exp-features {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        margin-top: 25px;
+        gap: 10px;
+        margin-top: 20px;
       }
 
       .exp-card {
         background: var(--blue-sky);
-        padding: 15px;
+        padding: 12px;
         border-radius: 8px;
         text-align: center;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 600;
         color: var(--blue-dark);
       }
 
-      /* --- РАЗДЕЛ С КАРТОЧКАМИ НАПРАВЛЕНИЙ (WHAT TO STUDY) --- */
+      /* --- РАЗДЕЛ С КАРТОЧКАМИ --- */
       .programs-section {
-        padding: 60px 0;
+        padding: 50px 0;
       }
 
       .section-title {
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
       }
 
       .section-title h2 {
         color: var(--blue-dark);
-        font-size: 36px;
+        font-size: 28px;
         font-weight: 800;
-      }
-
-      .section-title p {
-        color: var(--blue-light);
-        font-size: 16px;
-        margin-top: 5px;
       }
 
       .programs-grid {
@@ -281,19 +228,8 @@
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        transition: transform 0.3s;
         display: flex;
         flex-direction: column;
-      }
-
-      .prog-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .prog-img {
-        height: 150px;
-        width: 100%;
-        object-fit: cover;
       }
 
       .prog-body {
@@ -305,7 +241,7 @@
       }
 
       .prog-body h3 {
-        font-size: 15px;
+        font-size: 14px;
         color: var(--blue-dark);
         text-transform: uppercase;
         margin-bottom: 10px;
@@ -337,7 +273,6 @@
         font-weight: bold;
       }
 
-      /* Адаптивность для мобильных телефонов */
       @media (max-width: 992px) {
         .programs-grid { grid-template-columns: repeat(2, 1fr); }
         .hero__grid { grid-template-columns: 1fr; }
@@ -351,31 +286,22 @@
   </head>
 
   <body>
-    <!-- НАВИГАЦИЯ ИЗ МАКЕТА -->
     <header class="header">
       <div class="container header__inner">
         <div class="logo-block">
-          <img class="logo-img" src="https://icons8.com" alt="KSU Logo" />
-          <div class="logo-text">Kursk State<br />University</div>
+          <div class="logo-text">🏛 Kursk State<br />University</div>
         </div>
-
         <nav class="navigation">
           <a href="#">Inicio</a>
-          <a href="#">Sobre KSU</a>
-          <a href="#">Programas de estudio</a>
+          <a href="#">Programas</a>
           <a href="#">Admisión</a>
-          <a href="#">Vida en el campus</a>
           <a href="#">Contacto</a>
         </nav>
-
-        <div class="lang-switch">
-          <span>🇪🇸 Español</span>
-        </div>
+        <div class="lang-switch">🇪🇸 ES</div>
       </div>
     </header>
 
     <main>
-      <!-- ПЕРВЫЙ ГЛАВНЫЙ ЭКРАН -->
       <section class="hero">
         <div class="container hero__grid">
           <div>
@@ -384,16 +310,76 @@
             <p class="hero__text">
               Una universidad con tradición, oportunidades internacionales y una comunidad que te apoya en cada paso de tu camino.
             </p>
-            <a class="btn-video" href="#">Ver el video</a>
+            <a class="btn-video" href="#">▶ Ver el video</a>
           </div>
-          <div class="hero__img-wrapper">
-            <!-- Временное качественное фото улыбающихся студентов для сочности макета -->
-            <img class="hero__img" src="https://unsplash.com" alt="Estudiantes de KSU" />
+          <div>
+            <div class="hero__img-placeholder">[ Foto: Estudiantes KSU ]</div>
           </div>
         </div>
       </section>
 
-      <!-- ВТОРОЙ БЛОК: ОПЫТ, МЕНЯЮЩИЙ ЖИЗНЬ -->
       <section class="experience">
         <div class="container">
-          
+          <div class="exp-grid">
+            <div>
+              <div class="exp-placeholder">▶</div>
+            </div>
+            <div class="exp-content">
+              <h2>Una experiencia que cambia tu vida</h2>
+              <p>Conoce a nuestros estudiantes, sus historias, los profesores y la vida en el campus de KSU.</p>
+              <div class="exp-features">
+                <div class="exp-card">🏛 Tradición</div>
+                <div class="exp-card">🌐 Global</div>
+                <div class="exp-card">⭐ Futuro</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="programs-section">
+        <div class="container">
+          <div class="section-title">
+            <h2>¿Qué quieres estudiar?</h2>
+            <p>Elige el área que te interesa y descubre los programas de KSU.</p>
+          </div>
+
+          <div class="programs-grid">
+            <article class="prog-card">
+              <div class="prog-body">
+                <h3>Tecnología e Informática</h3>
+                <ul class="prog-list">
+                  <li>Informática</li>
+                  <li>Sistemas digitales</li>
+                  <li>Seguridad</li>
+                </ul>
+                <a href="#" class="prog-arrow">→</a>
+              </div>
+            </article>
+
+            <article class="prog-card">
+              <div class="prog-body">
+                <h3>Economía y Gestión</h3>
+                <ul class="prog-list">
+                  <li>Economía</li>
+                  <li>Gestión</li>
+                  <li>Finanzas</li>
+                </ul>
+                <a href="#" class="prog-arrow">→</a>
+              </div>
+            </article>
+
+            <article class="prog-card">
+              <div class="prog-body">
+                <h3>Derecho</h3>
+                <ul class="prog-list">
+                  <li>Derecho civil</li>
+                  <li>Derecho penal</li>
+                  <li>Internacional</li>
+                </ul>
+                <a href="#" class="prog-arrow">→</a>
+              </div>
+            </article>
+
+            <article class="prog-card">
+              
